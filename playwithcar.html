@@ -75,21 +75,21 @@
 
   <div class="car" id="car"></div>
 
-  <script>
-    const carElement = document.getElementById("car");
+ <script>
+  const carElement = document.getElementById("car");
+  const imageURL = "https://via.placeholder.com/100x200.png?text=Hot+Car";
 
-    // Try loading car image
-    const image = new Image();
-    image.src = getComputedStyle(document.documentElement).getPropertyValue('--car-image-url').replace(/['"]/g, '').trim();
+  const image = new Image();
+  image.src = imageURL;
 
-    image.onload = () => {
-      carElement.style.backgroundImage = `url('${image.src}')`;
-    };
+  image.onload = () => {
+    carElement.style.backgroundImage = `url('${imageURL}')`;
+  };
 
-    image.onerror = () => {
-      // If image fails, use fallback
-      carElement.style.backgroundImage = "url('https://via.placeholder.com/100x200.png?text=Car')";
-    };
-  </script>
+  image.onerror = () => {
+    carElement.style.backgroundImage = "url('https://via.placeholder.com/100x200.png?text=Car')";
+  };
+</script>
+
 </body>
 </html>
